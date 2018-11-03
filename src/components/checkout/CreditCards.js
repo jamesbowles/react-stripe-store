@@ -28,13 +28,18 @@ const createOptions = (fontSize) => {
 };
 
 class _CardForm extends Component {
-  state = { disabled: false };
+  state = { disabled: false, error: null };
   handleSubmit = ev => {
     ev.preventDefault();
     this.props.stripe.createToken()
-      .then(payload => {
-        this.setState({ disabled: true })
-        this.props.setToken(payload.token.id)
+      .then(({token, error}) => {
+        if (error) {
+          this.setState({ error: error.message});
+          return false;
+        } else {
+          this.setState({ disabled: true })
+          this.props.setToken(token.id)
+        }
       });
   };
   render() {
@@ -45,6 +50,10 @@ class _CardForm extends Component {
             {...createOptions(this.props.fontSize)}
           />
         </label>
+
+        {this.state.error &&
+          <p style={{ color: "#f40" }}>{this.state.error}</p>
+        }
         <Button variant="raised" color="primary" 
           disabled={this.state.disabled} onClick={this.handleSubmit}
         >
