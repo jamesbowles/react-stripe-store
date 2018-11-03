@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
 
 const FlexWrapper = styled.div`
@@ -98,13 +97,18 @@ class ProductDetails extends Component {
           >
             Add To Cart
           </Button>
-          <TextField
-            value={this.state.quantity}
+
+          <Select
+            native
+            value={this.state['quantity']}
             onChange={this.handleChange('quantity')}
-            type="number"
-            margin="normal"
-            style={{ width: "40px", margin: "0 30px 0" }}
-          />
+            style={{ width: "40px"}}
+          >
+            {
+              Array.from({length: 20}, (x,i) => {
+                return <option key={i} value={i+1}>{i+1}</option>
+            })}
+          </Select>
         </Right>
         { product.details &&
           <Details>
