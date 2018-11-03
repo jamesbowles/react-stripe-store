@@ -60,7 +60,7 @@ function sendEmail(status, order) {
 
 app.post('/order/create', function(req, res) {
   stripe.orders.create({
-    currency: 'usd',
+    currency: 'nzd',
     items: req.body.items,
     shipping: req.body.shipping,
     metadata: req.body.metadata,
