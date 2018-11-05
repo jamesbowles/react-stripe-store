@@ -15,7 +15,8 @@ class Shipping extends Component {
         address2: "",
         locality: "",
         region: "",
-        postalCode: ""
+        postalCode: "",
+        country: "NZ"
       };
     }
   }
@@ -28,6 +29,12 @@ class Shipping extends Component {
     this.props.handleChange("address", this.state);
     this.props.createOrder(this.state);
     this.props.changePane();
+  }
+
+  requiredAddressFieldsPresent = () => {
+    return !!this.state.postalCode.length 
+      && !!this.state.address1.length
+      && !!this.state.givenName.length
   }
 
   render() {
@@ -74,26 +81,24 @@ class Shipping extends Component {
           style={{ marginRight: "50px" }}
         />
         <TextField
-          autoComplete="shipping region"
-          label="State"
-          value={this.state.region}
-          onChange={(e) => this.handleChange('region', e.target.value)}
+          autoComplete="shipping postal-code"
+          label="Postcode"
+          value={this.state.postalCode}
+          onChange={(e) => this.handleChange('postalCode', e.target.value)}
           margin="normal"
           style={{ marginRight: "50px" }}
         />
         <TextField
-          autoComplete="shipping postal-code"
-          label="Zip"
-          value={this.state.postalCode}
-          onChange={(e) => this.handleChange('postalCode', e.target.value)}
+          autoComplete="shipping country"
+          label="Country"
+          value="New Zealand"
+          disabled
           margin="normal"
+
         />
-        <div style={{ marginTop: "20px", fontSize: "14px" }}>
-          All orders are shipped USPS Priority, and delivered in 2-5 business days.
-        </div>
         <Button variant="raised" color="primary"
           style={{ marginTop: "20px" }}
-          disabled={!this.state.postalCode.length}
+          disabled={!this.requiredAddressFieldsPresent()}
           onClick={this.submitAddress}
         >
           Continue

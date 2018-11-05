@@ -69,7 +69,7 @@ class Checkout extends Component {
           line2: address.address2,
           city: address.locality,
           state: address.region,
-          country: 'US',
+          country: 'NZ',
           postal_code: address.postalCode
         }
       },
