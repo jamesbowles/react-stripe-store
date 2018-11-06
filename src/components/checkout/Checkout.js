@@ -101,6 +101,8 @@ class Checkout extends Component {
       })
     }).then((response) => response.json())
     .then((order) => {
+      const slug = `${this.props.config.store_slug}_products`;
+      localStorage.setItem(slug, null);
       this.props.history.push({
         pathname: '/confirm',
         state: { order }
