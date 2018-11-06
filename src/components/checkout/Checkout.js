@@ -32,6 +32,7 @@ class Checkout extends Component {
     this.state = {
       pane: 0,
       items: [],
+      shippingPrice: props.config.shippingPrice,
       email: "",
       address: {}
     };
@@ -109,7 +110,7 @@ class Checkout extends Component {
 
   render() {
     const { classes, config } = this.props;
-    const { pane, address } = this.state;
+    const { pane, address, shippingPrice } = this.state;
 
     let displayAddress;
     if (address.postalCode) {
@@ -126,7 +127,7 @@ class Checkout extends Component {
         <Grid container className={classes.root} spacing={16} direction={'row-reverse'}>
           <Grid item md={4} xs={12}>
             <Paper className={classes.paper}>
-              <CartSmall items={this.state.items} config={config} />
+              <CartSmall items={this.state.items} config={config} shippingPrice={shippingPrice} />
             </Paper>
           </Grid>
           <Grid item md={8} xs={12}>

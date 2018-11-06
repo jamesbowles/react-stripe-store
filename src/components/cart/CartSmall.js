@@ -32,12 +32,15 @@ const Image = styled.div`
 
 class CartSmall extends Component {
   render() {
-    let price;
+    let itemsTotal;
+    let totalPrice;
+    let shippingPrice = this.props.shippingPrice;
     if (this.props.items.length) {
-      price = this.props.items
+      itemsTotal = this.props.items
         .map(i => i.quantity*i.price)
         .reduce((a,b) => a+Number(b))
     }
+    totalPrice = (itemsTotal + this.props.shippingPrice).toFixed(2);
     return (
       <Wrapper>
         { this.props.items.map((d,i) => {
@@ -63,16 +66,16 @@ class CartSmall extends Component {
         <Divider style={{ margin: "20px 0" }}/>
           <Row>
             <span className="small-text">Subtotal</span>
-            <span className="black-text small-text">${price}</span>
+            <span className="black-text small-text">${itemsTotal && itemsTotal.toFixed(2)}</span>
           </Row>
           <Row>
             <span className="small-text">Shipping</span>
-            <span className="black-text small-text">FREE</span>
+            <span className="black-text small-text">${shippingPrice && shippingPrice.toFixed(2)}</span>
           </Row>
         <Divider style={{ margin: "20px 0" }}/>
           <Row>
             <span>Total</span>
-            <span className="black-text">${price}</span>
+            <span className="black-text">${totalPrice}</span>
           </Row>
       </Wrapper>
     );
