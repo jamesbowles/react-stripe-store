@@ -24,13 +24,6 @@ const LargeIMG = styled.div`
   background-repeat: no-repeat;
   background-position: 50%;
   display: inline-block;
-  @media (min-width: 650px) {
-    filter: grayscale(100%);
-    transition: filter .5s;
-    &:hover {
-      filter: grayscale(0);
-    }
-  }
 `;
 const ImgWrapper = styled.div`
   border-bottom: 3px solid ${props => props.borderColor};
