@@ -71,6 +71,47 @@
   dependencies:
     recompose "^0.26.0 || ^0.27.0"
 
+"@sentry/browser@^4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-4.2.4.tgz#d20c24b8d62e8a03baa062ae2c4318cbee5ac570"
+  dependencies:
+    "@sentry/core" "4.2.4"
+    "@sentry/types" "4.2.4"
+    "@sentry/utils" "4.2.4"
+
+"@sentry/core@4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-4.2.4.tgz#e4a331512a4db149f14a2976b75a5b3c8ef47f87"
+  dependencies:
+    "@sentry/hub" "4.2.4"
+    "@sentry/minimal" "4.2.4"
+    "@sentry/types" "4.2.4"
+    "@sentry/utils" "4.2.4"
+
+"@sentry/hub@4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@sentry/hub/-/hub-4.2.4.tgz#0248ad50e3a3e248a2086612a19914838694314c"
+  dependencies:
+    "@sentry/types" "4.2.4"
+    "@sentry/utils" "4.2.4"
+
+"@sentry/minimal@4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@sentry/minimal/-/minimal-4.2.4.tgz#6d7fc8a06395176be53d0941244b8e4a3d74a802"
+  dependencies:
+    "@sentry/hub" "4.2.4"
+    "@sentry/types" "4.2.4"
+
+"@sentry/types@4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-4.2.4.tgz#c77f5ecdbe38cc826451b11746cde9faf50cb40f"
+
+"@sentry/utils@4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-4.2.4.tgz#6e5f49d8a67b109c48fbe9762e793c8f453513b2"
+  dependencies:
+    "@sentry/types" "4.2.4"
+
 "@turf/meta@^3.7.5":
   version "3.14.0"
   resolved "https://registry.npmjs.org/@turf/meta/-/meta-3.14.0.tgz#8d3050c1a0f44bf406a633b6bd28c510f7bcee27"
@@ -1765,14 +1806,6 @@ concat-stream@^1.6.0, concat-stream@~1.6.0:
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
 
-concat-stream@~1.4.1:
-  version "1.4.11"
-  resolved "https://registry.npmjs.org/concat-stream/-/concat-stream-1.4.11.tgz#1dc9f666f2621da9c618b1e7f8f3b2ff70b5f76f"
-  dependencies:
-    inherits "~2.0.1"
-    readable-stream "~1.1.9"
-    typedarray "~0.0.5"
-
 concat-stream@~1.5.1:
   version "1.5.2"
   resolved "https://registry.npmjs.org/concat-stream/-/concat-stream-1.5.2.tgz#708978624d856af41a5a741defdd261da752c266"
@@ -2098,22 +2131,6 @@ currently-unhandled@^0.4.1:
   resolved "https://registry.npmjs.org/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
   dependencies:
     array-find-index "^1.0.1"
-
-d3-array@1:
-  version "1.2.1"
-  resolved "https://registry.npmjs.org/d3-array/-/d3-array-1.2.1.tgz#d1ca33de2f6ac31efadb8e050a021d7e2396d5dc"
-
-d3-geo@^1.10.0:
-  version "1.10.0"
-  resolved "https://registry.npmjs.org/d3-geo/-/d3-geo-1.10.0.tgz#2972d18014f1e38fc1f8bb6d545377bdfb00c9ab"
-  dependencies:
-    d3-array "1"
-
-d3-tile@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/d3-tile/-/d3-tile-0.0.4.tgz#2d5f8dec207bf3e9fdc38fc74e45d7c3ab3aa808"
-  dependencies:
-    d3-array "1"
 
 d@1:
   version "1.0.0"
@@ -5357,10 +5374,6 @@ minimatch@3.0.3:
   dependencies:
     brace-expansion "^1.0.0"
 
-minimist@0.0.7:
-  version "0.0.7"
-  resolved "https://registry.npmjs.org/minimist/-/minimist-0.0.7.tgz#dc4c620253c542eda0d2eb91c3c6a971a11e63e7"
-
 minimist@0.0.8:
   version "0.0.8"
   resolved "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
@@ -6852,15 +6865,6 @@ readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.6, readable
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-readable-stream@~1.1.9:
-  version "1.1.14"
-  resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
-  dependencies:
-    core-util-is "~1.0.0"
-    inherits "~2.0.1"
-    isarray "0.0.1"
-    string_decoder "~0.10.x"
-
 readable-stream@~2.0.0:
   version "2.0.6"
   resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
@@ -7364,18 +7368,6 @@ shellwords@^0.1.1:
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
-
-simplify-geojson@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/simplify-geojson/-/simplify-geojson-1.0.3.tgz#4f9ed4f0f62be86d38526bcdcae072b0e9df5ef4"
-  dependencies:
-    concat-stream "~1.4.1"
-    minimist "0.0.7"
-    simplify-geometry "0.0.2"
-
-simplify-geometry@0.0.2:
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/simplify-geometry/-/simplify-geometry-0.0.2.tgz#63797e676eae96835ace02bcd27d3e1af544f49c"
 
 slash@^1.0.0:
   version "1.0.0"

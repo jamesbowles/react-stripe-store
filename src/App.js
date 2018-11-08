@@ -51,7 +51,7 @@ class App extends Component {
   }
   render() {
     return (
-      <StripeProvider apiKey={config.api_key}>
+      <StripeProvider apiKey={`${process.env.REACT_APP_STRIPE_API_KEY}`}>
         <Router>
           <ScrollToTop>
             <MuiThemeProvider theme={theme}>

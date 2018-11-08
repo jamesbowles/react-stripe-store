@@ -1,7 +1,6 @@
 {
-  "store_name": "My Awesome Store",
-  "store_slug": "react-stripe-store",
-  "api_key": "{STRIPE_PUBLIC_KEY}",
+  "store_name": "Busy Bee Playdough",
+  "store_slug": "busy-bee-playdough",
   "colors": {
     "primary": {
       "main": "#FF6A64",
@@ -12,25 +11,43 @@
       "main": "#74EBD5"
     }
   },
+  "shippingPrice": 6.50,
   "products": [
     {
-      "name": "Super Cool Product",
-      "url": "url-for-product",
-      "stripe_id": "{STRIPE_PRODUCT_ID}",
-      "description": "What a great product!",
+      "name": "Natural Playdough",
+      "url": "natural-playdough",
+      "stripe_id": "prod_Du84DO5BQynW2v",
+      "description": "Beautiful natural playdough that’s made to order.",
       "photos": ["photo1.jpg","photo2.jpg"],
       "details": [
-        "These are details that get rendered as bullet points",
-        "Useful for short + sweet info"
-      ],
-      "variants": [
-        {
-          "name": "metadata",
-          "options":[
-            {"label": "option 1"},
-            {"label": "option 2"}
-          ]
-        }
+        "Scented with dried herbs and essential oils.",
+        "Colours are all derived from vegetables, fruits or spices.",
+        "Non toxic and compostable"
+      ]
+    },
+    {
+      "name": "Natural Playdough Duo",
+      "url": "natural-playdough-duo",
+      "stripe_id": "prod_Dtm2sOs28hvRrS",
+      "description": "Beautiful natural playdough that’s made to order. Choose any two scents",
+      "photos": ["photo1.jpg","photo2.jpg"],
+      "details": [
+        "Two secents in one tin",
+        "Scented with dried herbs and essential oils.",
+        "Colours are all derived from vegetables, fruits or spices.",
+        "Non toxic and compostable"
+      ]
+    },
+    {
+      "name": "Christmas Playdough",
+      "url": "natural-cristmas-playdough",
+      "stripe_id": "prod_Dw0oTwzu9SoT7G",
+      "description": "Beautiful natural playdough that’s made to order.",
+      "photos": ["photo1.jpg","photo2.jpg"],
+      "details": [
+        "Scented with dried herbs and essential oils.",
+        "Colours are all derived from vegetables, fruits or spices.",
+        "Non toxic and compostable"
       ]
     }
   ]
