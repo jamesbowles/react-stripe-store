@@ -37,6 +37,8 @@ app.use(bodyParser.json());
 app.get('/product-info/:id', function(req, res) {
   stripe.skus.list({product : req.params.id}, 
     function(err, product){
+      let productData = product.data.filter(item => item.active)
+      product.data = productData;
       err ? res.status(500).send(err) : res.json(product);
     });
 });
@@ -44,7 +46,7 @@ app.get('/product-info/:id', function(req, res) {
 app.get('/product-info/', function(req, res) {
   stripe.skus.list(
     function(err, skus){
-      err ? res.status(500).send(err) : res.json(skus.data);
+      err ? res.status(500).send(err) : res.json(skus.data.filter(item => item.active));
     });
 });
 
